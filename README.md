@@ -91,7 +91,7 @@ Reqable 使用 Flutter / Dart AOT 后，传统 Windows x64 逆向的一些常用
 
 ### IDA 函数识别不完整
 
-IDA 可能漏掉大量实际正在执行的 Dart AOT 代码。
+IDA 漏掉大量实际正在执行的 Dart AOT 代码。
 
 因此：
 
