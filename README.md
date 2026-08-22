@@ -85,6 +85,8 @@ Pattern Scan
 
 ## Flutter / Dart AOT 逆向中的问题
 
+Flutter Android / iOS 的公开逆向资料已经比较多，但 **Flutter Windows x64** 的研究资料和工具几乎没有，这也是本项目的研究重点。
+
 Reqable 使用 Flutter / Dart AOT 后，传统 Windows x64 逆向的一些常用途径会明显失效。
 
 ### IDA 函数识别不完整
