@@ -561,7 +561,7 @@ local function dumpObjectPool(pp)
         if SCAN_OBJECT_FIELDS then
             refs:write("[FIELD] scanning is ENABLED; it is heuristic and may contain false references.\n\n")
         else
-            refs:write("[FIELD] scanning is DISABLED by default to avoid the old ~30 MB noisy graph.\n\n")
+            refs:write("[FIELD] scanning is DISABLED by default to avoid generating a large noisy reference graph file.\n\n")
         end
     end
 
