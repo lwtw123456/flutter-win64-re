@@ -1,12 +1,12 @@
 # flutter-win64-re
 
-> Flutter Windows x64 / Dart AOT 逆向工程与运行时分析记录。
+> 面向 Windows x64 Flutter/Dart AOT 应用的逆向工程研究。
 
 ## 项目简介
 
-本项目用于记录 Flutter Windows x64 客户端在 Dart AOT 场景下的逆向分析、运行时定位与 Patch 实践。
+本项目围绕 Windows x64 平台 Flutter/Dart AOT 应用开展逆向工程研究，重点关注 AOT Code Region 定位、运行时内存分析、Object Pool 恢复与 Runtime Patch 等问题。
 
-目前包含两个案例：
+目前包含两个研究成果：
 
 - **Reqable**：实现了在不建立账号登录会话的情况下，使用原本需要订阅才能使用的功能。
 - **Rive**：实现了免费用户也可以导出 `.riv` 文件。
@@ -22,7 +22,7 @@
 - Tagged Object / Smi / String 基础识别
 - `version.dll` Proxy
 
-`DartPPDumper.lua` 是分析过程中编写的 Dart AOT 辅助工具，用于恢复运行时 PP、Dump Object Pool，并辅助定位对象引用。
+`DartPPDumper.lua` 是研究过程中编写的一个基于 Cheat Engine Lua 的 Dart AOT 运行时分析工具，目前已具备 PP 恢复、Object Pool Dump、对象识别、字符串解析与引用搜索等能力，并具有继续扩展为通用 Dart AOT 分析工具的潜力。
 
 ---
 
@@ -36,7 +36,7 @@ IDA 漏掉大量实际正在执行的 Dart AOT 代码。
 
 因此：
 
-- Functions Window 不一定完整
+- Functions Window 不完整
 - Call Graph / Xref 可能缺失
 - 某些真实函数可能仍显示为 undefined bytes
 - Hex-Rays 自动恢复出的函数边界和参数不能完全相信
@@ -122,7 +122,7 @@ Flutter Framework、Dart Runtime 和自身业务代码混在同一套 AOT 代码
 
 ### RiveHack
 
-`version.dll` 加载时目标 Dart AOT Code Region 还没有出现。
+Rive 的目标 Dart AOT Code Region 在 `version.dll` 加载时尚未出现。
 
 因此工作线程会等 Flutter 主窗口出现后，再由 `MemoryKit` 扫描不属于已加载 PE 模块的匿名可执行内存并完成 Patch。
 
@@ -169,7 +169,7 @@ cmake --build build/RiveHack --config Release
 
 ## Disclaimer
 
-本项目为个人逆向工程、Flutter / Dart AOT 学习和软件安全研究记录。
+本项目为个人逆向工程、Flutter / Dart AOT 学习和软件安全研究项目。
 
 Reqable、Rive 及相关商标、软件归其各自开发者 / 权利人所有。本项目与其官方无关，也不代表其官方立场。
 
