@@ -1,0 +1,19 @@
+LIBRARY "version.dll"
+EXPORTS
+    GetFileVersionInfoA=AheadLibEx_GetFileVersionInfoA @1
+    GetFileVersionInfoByHandle=AheadLibEx_GetFileVersionInfoByHandle @2
+    GetFileVersionInfoExA=AheadLibEx_GetFileVersionInfoExA @3
+    GetFileVersionInfoExW=AheadLibEx_GetFileVersionInfoExW @4
+    GetFileVersionInfoSizeA=AheadLibEx_GetFileVersionInfoSizeA @5
+    GetFileVersionInfoSizeExA=AheadLibEx_GetFileVersionInfoSizeExA @6
+    GetFileVersionInfoSizeExW=AheadLibEx_GetFileVersionInfoSizeExW @7
+    GetFileVersionInfoSizeW=AheadLibEx_GetFileVersionInfoSizeW @8
+    GetFileVersionInfoW=AheadLibEx_GetFileVersionInfoW @9
+    VerFindFileA=AheadLibEx_VerFindFileA @10
+    VerFindFileW=AheadLibEx_VerFindFileW @11
+    VerInstallFileA=AheadLibEx_VerInstallFileA @12
+    VerInstallFileW=AheadLibEx_VerInstallFileW @13
+    VerLanguageNameA=AheadLibEx_VerLanguageNameA @14
+    VerLanguageNameW=AheadLibEx_VerLanguageNameW @15
+    VerQueryValueA=AheadLibEx_VerQueryValueA @16
+    VerQueryValueW=AheadLibEx_VerQueryValueW @17
